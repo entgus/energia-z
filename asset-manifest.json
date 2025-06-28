@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/energia-z/static/css/main.f26ec516.css",
+    "main.js": "/energia-z/static/js/main.6b79c3fe.js",
+    "index.html": "/energia-z/index.html",
+    "main.f26ec516.css.map": "/energia-z/static/css/main.f26ec516.css.map",
+    "main.6b79c3fe.js.map": "/energia-z/static/js/main.6b79c3fe.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f26ec516.css",
+    "static/js/main.6b79c3fe.js"
+  ]
+}
