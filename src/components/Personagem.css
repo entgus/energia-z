@@ -1,0 +1,8 @@
+.personagem {
+  text-align: center;
+}
+
+.personagem img {
+  width: 100%;
+  image-rendering: pixelated;
+}
