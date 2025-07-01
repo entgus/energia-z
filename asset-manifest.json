@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/energia-z/static/css/main.f26ec516.css",
-    "main.js": "/energia-z/static/js/main.6b79c3fe.js",
-    "index.html": "/energia-z/index.html",
-    "main.f26ec516.css.map": "/energia-z/static/css/main.f26ec516.css.map",
-    "main.6b79c3fe.js.map": "/energia-z/static/js/main.6b79c3fe.js.map"
+    "main.css": "/git%20remote%20set-url%20origin%20https://github.com/entgus/energia-z.git/static/css/main.f26ec516.css",
+    "main.js": "/git%20remote%20set-url%20origin%20https://github.com/entgus/energia-z.git/static/js/main.80cd7ae2.js",
+    "index.html": "/git%20remote%20set-url%20origin%20https://github.com/entgus/energia-z.git/index.html",
+    "main.f26ec516.css.map": "/git%20remote%20set-url%20origin%20https://github.com/entgus/energia-z.git/static/css/main.f26ec516.css.map",
+    "main.80cd7ae2.js.map": "/git%20remote%20set-url%20origin%20https://github.com/entgus/energia-z.git/static/js/main.80cd7ae2.js.map"
   },
   "entrypoints": [
     "static/css/main.f26ec516.css",
-    "static/js/main.6b79c3fe.js"
+    "static/js/main.80cd7ae2.js"
   ]
 }
