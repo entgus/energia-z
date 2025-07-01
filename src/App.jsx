@@ -3,7 +3,7 @@ import Menu from '/components/Menu';
 import Personagem from '/components/Personagem';
 import Conteudo from '/components/Conteudo';
 import Quiz from '/components/Quiz'; // ⬅️ importe o quiz
-import '/App.css';
+import './App.css';
 
 function App() {
   const [opcaoSelecionada, setOpcaoSelecionada] = useState(null);
