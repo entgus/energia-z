@@ -1,5 +1,5 @@
 import React from 'react';
-import '/Personagem.css';
+import './Personagem.css';
 
 function Personagem() {
   return (
