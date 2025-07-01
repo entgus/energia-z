@@ -4,7 +4,7 @@ import './Personagem.css';
 function Personagem() {
   return (
     <div className="personagem">
-      <img src="/personagem.png" alt="Personagem Pixel" />
+      <img src="./Personagem.png" alt="Personagem Pixel" />
     </div>
   );
 }

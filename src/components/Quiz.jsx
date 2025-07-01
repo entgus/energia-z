@@ -2,206 +2,207 @@ import React, { useState } from 'react';
 
 const perguntas = [
   {
-    texto: "Qual dessas atitudes mais combina com você?",
+    texto: "1. Que tipo de lugar te atrai mais em um dia livre?",
     alternativas: [
-      { texto: "Transformar a si mesmo para superar obstáculos", pontua: ["Egos", "Modificadores"] },
-      { texto: "Mudar o ambiente ao redor com estratégia", pontua: ["Alquimistas", "Armeiros"] },
-      { texto: "Acreditar tanto em algo que isso vira real", pontua: ["Ones", "Egos"] },
-      { texto: "Criar laços para resolver em grupo", pontua: ["Invocadores", "Modificadores"] },
-      { texto: "Inventar algo novo, mesmo que te chamem de louco", pontua: ["Armeiros", "Ones"] },
+      { texto: "Uma oficina onde você pode mexer nas suas criações.", pontua: ["Armeiros", "Alquimistas"] },
+      { texto: "Um parque movimentado onde tudo está em mudança.", pontua: ["Modificadores", "Invocadores"] },
+      { texto: "Um café tranquilo, com espaço para pensar.", pontua: ["Egos", "Alquimistas"] },
+      { texto: "Uma festa onde tudo pode acontecer.", pontua: ["Ones", "Modificadores"] },
+      { texto: "Uma praça onde as pessoas se reúnem naturalmente.", pontua: ["Invocadores", "Egos"] },
     ]
   },
   {
-    texto: "Como você resolve problemas difíceis?",
+    texto: "2. Em uma equipe de missão, seu papel seria...",
     alternativas: [
-      { texto: "Foco total e ação direta", pontua: ["Egos", "Armeiros"] },
-      { texto: "Improviso criativo e ousado", pontua: ["Modificadores", "Ones"] },
-      { texto: "Conversando com outros e unindo ideias", pontua: ["Invocadores", "Modificadores"] },
-      { texto: "Planejando bem antes de agir", pontua: ["Alquimistas", "Egos"] },
-      { texto: "Mudando algo essencial no ambiente", pontua: ["Alquimistas", "Armeiros"] },
+      { texto: "Construir ferramentas e soluções antes de partir.", pontua: ["Armeiros", "Egos"] },
+      { texto: "Unir os membros e motivar o grupo.", pontua: ["Invocadores", "Modificadores"] },
+      { texto: "Criar estratégias de abordagem e fuga.", pontua: ["Alquimistas", "Invocadores"] },
+      { texto: "Atuar como distração ou fator surpresa.", pontua: ["Modificadores", "Ones"] },
+      { texto: "Entrar em silêncio e resolver direto.", pontua: ["Egos", "Ones"] },
     ]
   },
   {
-    texto: "Como você costuma reagir em um ambiente novo?",
+    texto: "3. Qual dessas ações seria mais comum pra você durante um desafio?",
     alternativas: [
-      { texto: "Age naturalmente, sem precisar se adaptar muito", pontua: ["Egos", "Ones"] },
-      { texto: "Muda o clima com presença e criatividade", pontua: ["Modificadores", "Invocadores"] },
-      { texto: "Fica observando e analisa tudo primeiro", pontua: ["Alquimistas", "Armeiros"] },
-      { texto: "Se conecta com alguém e forma vínculos", pontua: ["Invocadores", "Modificadores"] },
-      { texto: "Já pensa como poderia transformar o lugar", pontua: ["Armeiros", "Ones"] },
+      { texto: "Ficar observando e calculando possibilidades.", pontua: ["Alquimistas", "Egos"] },
+      { texto: "Motivar os outros a não desistirem.", pontua: ["Invocadores", "Modificadores"] },
+      { texto: "Agir por impulso e ver onde dá.", pontua: ["Ones", "Modificadores"] },
+      { texto: "Criar uma ferramenta ou método próprio.", pontua: ["Armeiros", "Alquimistas"] },
+      { texto: "Focar no objetivo e ignorar distrações.", pontua: ["Egos", "Ones"] },
     ]
   },
   {
-    texto: "Qual dessas frases te representa melhor?",
+    texto: "4. Como você costuma lidar com conflitos em grupo?",
     alternativas: [
-      { texto: "Sou o motor por trás do meu próprio avanço", pontua: ["Egos", "Armeiros"] },
-      { texto: "Sou o caos necessário para algo novo nascer", pontua: ["Ones", "Modificadores"] },
-      { texto: "Observo primeiro, ajo depois", pontua: ["Alquimistas", "Egos"] },
-      { texto: "Sou quem faz todos se sentirem parte de algo", pontua: ["Invocadores", "Modificadores"] },
-      { texto: "Crio o impossível porque me recuso ao comum", pontua: ["Armeiros", "Ones"] },
+      { texto: "Muda o clima com humor ou provocações leves.", pontua: ["Modificadores", "Ones"] },
+      { texto: "Propõe uma solução prática para encerrar logo.", pontua: ["Egos", "Armeiros"] },
+      { texto: "Observa em silêncio e intervém com algo calculado.", pontua: ["Alquimistas", "Egos"] },
+      { texto: "Tenta reconectar os envolvidos e criar entendimento.", pontua: ["Invocadores", "Alquimistas"] },
+      { texto: "Se afasta pra criar algo que resolva tudo depois.", pontua: ["Armeiros", "Invocadores"] },
     ]
   },
   {
-    texto: "Quando precisa tomar decisões difíceis, você...",
+    texto: "5. Se você tivesse que enfrentar um monstro, como agiria?",
     alternativas: [
-      { texto: "Faz o que é preciso, mesmo que sozinho", pontua: ["Egos", "Armeiros"] },
-      { texto: "Tenta uma abordagem nova e inusitada", pontua: ["Ones", "Modificadores"] },
-      { texto: "Conversa com todos e adapta o caminho", pontua: ["Invocadores", "Modificadores"] },
-      { texto: "Analisa prós e contras com cuidado", pontua: ["Alquimistas", "Egos"] },
-      { texto: "Inventa uma solução com o que tem à mão", pontua: ["Armeiros", "Alquimistas"] },
+      { texto: "Transformaria o cenário para vencer.", pontua: ["Alquimistas", "Modificadores"] },
+      { texto: "Chamaria aliados com habilidades específicas.", pontua: ["Invocadores", "Alquimistas"] },
+      { texto: "Atacaria direto com o que tem nas mãos.", pontua: ["Egos", "Armeiros"] },
+      { texto: "Faria algo absurdo que ninguém espera.", pontua: ["Ones", "Modificadores"] },
+      { texto: "Criaria um objeto especial só pra isso.", pontua: ["Armeiros", "Ones"] },
     ]
   },
   {
-    texto: "No meio do caos, o que você faz?",
+    texto: "6. Em uma cidade nova, você se comporta como?",
     alternativas: [
-      { texto: "Cria ordem com lógica e cálculo", pontua: ["Alquimistas", "Egos"] },
-      { texto: "Traz leveza com atitude criativa", pontua: ["Modificadores", "Invocadores"] },
-      { texto: "Abraça o caos e usa ele a seu favor", pontua: ["Ones", "Modificadores"] },
-      { texto: "Garante que todos estejam bem e alinhados", pontua: ["Invocadores", "Alquimistas"] },
-      { texto: "Constrói algo útil em meio ao desastre", pontua: ["Armeiros", "Ones"] },
+      { texto: "Se adapta rápido e começa a agir naturalmente.", pontua: ["Invocadores", "Modificadores"] },
+      { texto: "Fica na sua até entender bem o lugar.", pontua: ["Egos", "Alquimistas"] },
+      { texto: "Testa os limites sociais só por curiosidade.", pontua: ["Ones", "Modificadores"] },
+      { texto: "Encontra um espaço isolado pra trabalhar sozinho.", pontua: ["Armeiros", "Egos"] },
+      { texto: "Cria conexões e entende a dinâmica local.", pontua: ["Invocadores", "Alquimistas"] },
     ]
   },
   {
-    texto: "Quando sente que está travado...",
+    texto: "7. Como você se comporta quando tudo dá errado?",
     alternativas: [
-      { texto: "Se isola e se reconstrói aos poucos", pontua: ["Armeiros", "Alquimistas"] },
-      { texto: "Provoca uma mudança radical no ambiente", pontua: ["Modificadores", "Egos"] },
-      { texto: "Cria algo absurdo só pra quebrar a lógica", pontua: ["Ones", "Modificadores"] },
-      { texto: "Conversa com alguém e reorganiza suas ideias", pontua: ["Invocadores", "Alquimistas"] },
-      { texto: "Faz algo com as mãos até clarear a mente", pontua: ["Armeiros", "Invocadores"] },
+      { texto: "Assume o controle e muda o plano.", pontua: ["Modificadores", "Armeiros"] },
+      { texto: "Tenta manter todos calmos e juntos.", pontua: ["Invocadores", "Alquimistas"] },
+      { texto: "Rasga as regras e tenta algo caótico.", pontua: ["Ones", "Modificadores"] },
+      { texto: "Fica quieto e resolve o que der sozinho.", pontua: ["Egos", "Armeiros"] },
+      { texto: "Procura entender o que causou tudo isso.", pontua: ["Alquimistas", "Ones"] },
     ]
   },
   {
-    texto: "Com qual dessas imagens você mais se identifica?",
+    texto: "8. Quando tem tempo livre, você costuma...",
     alternativas: [
-      { texto: "Uma faísca acendendo algo grande", pontua: ["Modificadores", "Ones"] },
-      { texto: "Um martelo moldando uma nova forma", pontua: ["Armeiros", "Egos"] },
-      { texto: "Um mapa sendo traçado com cuidado", pontua: ["Alquimistas", "Egos"] },
-      { texto: "Uma rede sendo formada entre pessoas", pontua: ["Invocadores", "Alquimistas"] },
-      { texto: "Uma realidade se partindo ao meio", pontua: ["Ones", "Armeiros"] },
+      { texto: "Criar algo do zero com as próprias mãos.", pontua: ["Armeiros", "Ones"] },
+      { texto: "Pensar em estratégias e estudar o mundo ao redor.", pontua: ["Alquimistas", "Egos"] },
+      { texto: "Interagir com os outros e sentir a energia do momento.", pontua: ["Invocadores", "Modificadores"] },
+      { texto: "Fazer algo totalmente novo só por diversão.", pontua: ["Modificadores", "Ones"] },
+      { texto: "Desaparecer um tempo e voltar com algo pronto.", pontua: ["Egos", "Armeiros"] },
     ]
   },
   {
-    texto: "Seu melhor momento acontece quando...",
+    texto: "9. Se você ganhasse um poder, o que preferiria?",
     alternativas: [
-      { texto: "Alguém precisa de você sem pedir", pontua: ["Invocadores", "Egos"] },
-      { texto: "Tudo parece impossível até você intervir", pontua: ["Ones", "Modificadores"] },
-      { texto: "Você antecipa o problema e evita o erro", pontua: ["Alquimistas", "Egos"] },
-      { texto: "Você reinventa algo que parecia pronto", pontua: ["Modificadores", "Armeiros"] },
-      { texto: "Você une pessoas que nem sabiam que se completavam", pontua: ["Invocadores", "Alquimistas"] },
+      { texto: "Mudar seu próprio corpo como quisesse.", pontua: ["Egos", "Modificadores"] },
+      { texto: "Invocar aliados com diferentes habilidades.", pontua: ["Invocadores", "Alquimistas"] },
+      { texto: "Transformar objetos e lugares à sua vontade.", pontua: ["Alquimistas", "Armeiros"] },
+      { texto: "Criar armas ou equipamentos únicos.", pontua: ["Armeiros", "Ones"] },
+      { texto: "Usar energia de formas inesperadas e caóticas.", pontua: ["Ones", "Modificadores"] },
     ]
   },
   {
-    texto: "Quando tem uma ideia nova, você...",
+    texto: "10. O que mais irrita você em uma batalha?",
     alternativas: [
-      { texto: "Cria mesmo que pareça impossível", pontua: ["Ones", "Armeiros"] },
-      { texto: "Testa ela no mundo real o mais rápido possível", pontua: ["Modificadores", "Egos"] },
-      { texto: "Compartilha com quem pode ajudar a expandi-la", pontua: ["Invocadores", "Modificadores"] },
-      { texto: "Analisa os impactos e consequências", pontua: ["Alquimistas", "Egos"] },
-      { texto: "Refina aos poucos, sozinho", pontua: ["Armeiros", "Alquimistas"] },
-    ]
-  },
-  {
-    texto: "Quando algo inesperado acontece, você...",
-    alternativas: [
-      { texto: "Se adapta e continua como se fosse parte do plano", pontua: ["Modificadores", "Invocadores"] },
-      { texto: "Observa os padrões e reorganiza tudo", pontua: ["Alquimistas", "Egos"] },
-      { texto: "Cria uma solução criativa na hora", pontua: ["Ones", "Modificadores"] },
-      { texto: "Garante que ninguém seja deixado para trás", pontua: ["Invocadores", "Alquimistas"] },
-      { texto: "Silenciosamente começa a construir algo novo", pontua: ["Armeiros", "Egos"] },
-    ]
-  },
-  {
-    texto: "Seu maior ponto forte está em...",
-    alternativas: [
-      { texto: "Criatividade no meio do caos", pontua: ["Modificadores", "Ones"] },
-      { texto: "Capacidade de guiar sem dominar", pontua: ["Invocadores", "Alquimistas"] },
-      { texto: "Autonomia total mesmo sob pressão", pontua: ["Egos", "Armeiros"] },
-      { texto: "Transformar ideias em matéria", pontua: ["Armeiros", "Alquimistas"] },
-      { texto: "Romper com tudo e criar novas regras", pontua: ["Ones", "Modificadores"] },
-    ]
-  },
-  {
-    texto: "O que você faz quando está sozinho?",
-    alternativas: [
-      { texto: "Conserta ou melhora algo", pontua: ["Armeiros", "Egos"] },
-      { texto: "Cria teorias, ideias ou realidades alternativas", pontua: ["Ones", "Alquimistas"] },
-      { texto: "Pensa em como mudar o mundo ao seu redor", pontua: ["Modificadores", "Ones"] },
-      { texto: "Reflete sobre os outros e como ajudá-los", pontua: ["Invocadores", "Alquimistas"] },
-      { texto: "Organiza os próximos passos com precisão", pontua: ["Alquimistas", "Egos"] },
-    ]
-  },
-  {
-    texto: "Como você lida com fracassos?",
-    alternativas: [
-      { texto: "Usa como combustível para inventar algo melhor", pontua: ["Modificadores", "Armeiros"] },
-      { texto: "Tira um aprendizado estratégico", pontua: ["Alquimistas", "Egos"] },
-      { texto: "Faz piada e tenta de novo por outro caminho", pontua: ["Modificadores", "Ones"] },
-      { texto: "Busca apoio ou compartilha com alguém", pontua: ["Invocadores", "Alquimistas"] },
-      { texto: "Silencia e reconstrói no seu próprio ritmo", pontua: ["Armeiros", "Ones"] },
-    ]
-  },
-  {
-    texto: "Você se destaca quando precisa...",
-    alternativas: [
-      { texto: "Liderar pelo exemplo, sem falar muito", pontua: ["Egos", "Armeiros"] },
-      { texto: "Propor ideias novas e estranhas", pontua: ["Ones", "Modificadores"] },
-      { texto: "Unir pontos diferentes em um plano", pontua: ["Alquimistas", "Invocadores"] },
-      { texto: "Mudar a energia de um ambiente", pontua: ["Modificadores", "Invocadores"] },
-      { texto: "Criar algo funcional a partir do zero", pontua: ["Armeiros", "Alquimistas"] },
-    ]
-  },
-  {
-    texto: "Na vida, você se sente mais como...",
-    alternativas: [
-      { texto: "Uma faísca esperando explodir em luz", pontua: ["Modificadores", "Ones"] },
-      { texto: "Uma engrenagem essencial que ninguém percebe", pontua: ["Egos", "Armeiros"] },
-      { texto: "Um elo invisível que une os outros", pontua: ["Invocadores", "Alquimistas"] },
-      { texto: "Uma força silenciosa que observa e planeja", pontua: ["Alquimistas", "Egos"] },
-      { texto: "Um inventor de mundos que ninguém entende ainda", pontua: ["Ones", "Armeiros"] },
-    ]
-  },
-  {
-    texto: "Quando o grupo se perde, você tende a...",
-    alternativas: [
-      { texto: "Assumir a frente com confiança", pontua: ["Egos", "Modificadores"] },
-      { texto: "Criar algo que devolva o foco de todos", pontua: ["Modificadores", "Armeiros"] },
-      { texto: "Se manter firme e escutar até as emoções passarem", pontua: ["Invocadores", "Alquimistas"] },
-      { texto: "Pensar em um plano que ninguém viu ainda", pontua: ["Alquimistas", "Ones"] },
-      { texto: "Fazer do caos um novo ponto de partida", pontua: ["Ones", "Modificadores"] },
-    ]
-  },
-  {
-    texto: "Na prática, você gosta mais de...",
-    alternativas: [
-      { texto: "Atuar com autonomia total", pontua: ["Egos", "Armeiros"] },
-      { texto: "Surpreender com novas possibilidades", pontua: ["Modificadores", "Ones"] },
-      { texto: "Construir algo com precisão", pontua: ["Armeiros", "Alquimistas"] },
-      { texto: "Cuidar do ritmo e das conexões do grupo", pontua: ["Invocadores", "Modificadores"] },
-      { texto: "Enxergar o que outros não veem e manipular isso", pontua: ["Alquimistas", "Ones"] },
-    ]
-  },
-  {
-    texto: "O que mais te motiva no cotidiano?",
-    alternativas: [
-      { texto: "Superar meus próprios limites", pontua: ["Egos", "Ones"] },
-      { texto: "Criar algo que nunca existiu", pontua: ["Modificadores", "Armeiros"] },
-      { texto: "Ver as pessoas em sintonia", pontua: ["Invocadores", "Alquimistas"] },
-      { texto: "Resolver o que está errado de forma prática", pontua: ["Egos", "Alquimistas"] },
-      { texto: "Desafiar a lógica e ver o que acontece", pontua: ["Ones", "Modificadores"] },
-    ]
-  },
-  {
-    texto: "Qual dessas frases você mais sente que é sua?",
-    alternativas: [
-      { texto: "Eu mudo para que tudo funcione", pontua: ["Modificadores", "Egos"] },
-      { texto: "Eu crio o que ninguém imaginou", pontua: ["Ones", "Armeiros"] },
-      { texto: "Eu organizo o caos sem alarde", pontua: ["Alquimistas", "Egos"] },
-      { texto: "Eu estou onde alguém precisa de mim", pontua: ["Invocadores", "Modificadores"] },
-      { texto: "Eu entendo antes de agir", pontua: ["Alquimistas", "Invocadores"] },
+      { texto: "Incapacidade de controlar o ambiente.", pontua: ["Alquimistas", "Modificadores"] },
+      { texto: "Pessoas que não cooperam com o grupo.", pontua: ["Invocadores", "Egos"] },
+      { texto: "Ter que seguir ordens irracionais.", pontua: ["Ones", "Armeiros"] },
+      { texto: "Ser impedido de terminar o que começou.", pontua: ["Armeiros", "Egos"] },
+      { texto: "Falta de criatividade nas soluções.", pontua: ["Modificadores", "Ones"] },
     ]
   }
-];
+  ,
+  {
+    texto: "11. Em uma viagem longa, o que você prefere fazer?",
+    alternativas: [
+      { texto: "Observar tudo pela janela e imaginar histórias.", pontua: ["Ones", "Alquimistas"] },
+      { texto: "Organizar os caminhos e possíveis paradas.", pontua: ["Armeiros", "Alquimistas"] },
+      { texto: "Conversar com quem estiver por perto.", pontua: ["Invocadores", "Modificadores"] },
+      { texto: "Ficar quieto e pronto pra reagir se algo acontecer.", pontua: ["Egos", "Invocadores"] },
+      { texto: "Criar confusão só pra ver o que muda no clima.", pontua: ["Modificadores", "Ones"] }
+    ]
+  },
+  {
+    texto: "12. Como você se prepara para algo desconhecido?",
+    alternativas: [
+      { texto: "Confio no que sinto e improviso.", pontua: ["Ones", "Modificadores"] },
+      { texto: "Estudo e me antecipo a cada cenário.", pontua: ["Alquimistas", "Armeiros"] },
+      { texto: "Me concentro e vou direto ao ponto.", pontua: ["Egos", "Armeiros"] },
+      { texto: "Procuro apoio e opiniões diferentes.", pontua: ["Invocadores", "Alquimistas"] },
+      { texto: "Levo tudo o que puder e adapto no caminho.", pontua: ["Modificadores", "Egos"] }
+    ]
+  },
+  {
+    texto: "13. Qual dessas atividades você faria por diversão?",
+    alternativas: [
+      { texto: "Criar um plano só pra testar com amigos.", pontua: ["Invocadores", "Alquimistas"] },
+      { texto: "Ficar em silêncio criando algo com as mãos.", pontua: ["Egos", "Armeiros"] },
+      { texto: "Fazer algo estranho só pra ver a reação.", pontua: ["Ones", "Modificadores"] },
+      { texto: "Explorar um lugar novo e esquecer o tempo.", pontua: ["Modificadores", "Invocadores"] },
+      { texto: "Observar pessoas e tentar prever ações.", pontua: ["Alquimistas", "Ones"] }
+    ]
+  },
+  {
+    texto: "14. Você encontra um portal mágico desconhecido. O que faz?",
+    alternativas: [
+      { texto: "Analisa os símbolos e a estrutura dele.", pontua: ["Alquimistas", "Armeiros"] },
+      { texto: "Entra sem pensar, só pra ver o que acontece.", pontua: ["Ones", "Modificadores"] },
+      { texto: "Chama os outros e discute possibilidades.", pontua: ["Invocadores", "Modificadores"] },
+      { texto: "Toca nele e vê como ele reage a você.", pontua: ["Modificadores", "Egos"] },
+      { texto: "Fica atento ao redor e se posiciona pra reagir.", pontua: ["Egos", "Ones"] }
+    ]
+  },
+  {
+    texto: "15. Você está sozinho à noite em uma floresta. Qual pensamento surge primeiro?",
+    alternativas: [
+      { texto: "Talvez eu não esteja sozinho.", pontua: ["Ones", "Invocadores"] },
+      { texto: "Preciso achar um ponto seguro.", pontua: ["Egos", "Armeiros"] },
+      { texto: "Tudo ao meu redor pode ser útil.", pontua: ["Modificadores", "Alquimistas"] },
+      { texto: "Se algo aparecer, eu improviso.", pontua: ["Modificadores", "Ones"] },
+      { texto: "Se fosse um grupo, estaríamos mais seguros.", pontua: ["Invocadores", "Alquimistas"] }
+    ]
+  },
+  {
+    texto: "16. Qual dessas atitudes parece mais valiosa pra você?",
+    alternativas: [
+      { texto: "Agir sem hesitar quando necessário.", pontua: ["Egos", "Modificadores"] },
+      { texto: "Ouvir antes de falar.", pontua: ["Alquimistas", "Invocadores"] },
+      { texto: "Questionar tudo, mesmo o óbvio.", pontua: ["Ones", "Modificadores"] },
+      { texto: "Criar soluções com ferramentas próprias.", pontua: ["Armeiros", "Egos"] },
+      { texto: "Se adaptar ao que o grupo precisa.", pontua: ["Invocadores", "Modificadores"] }
+    ]
+  },
+  {
+    texto: "17. Uma criatura desconhecida aparece. O que você faz?",
+    alternativas: [
+      { texto: "Testo uma provocação e observo a reação.", pontua: ["Modificadores", "Ones"] },
+      { texto: "Procuro um ponto fraco pra um ataque preciso.", pontua: ["Armeiros", "Egos"] },
+      { texto: "Crio distrações e tento atrair aliados.", pontua: ["Invocadores", "Modificadores"] },
+      { texto: "Analiso os padrões de comportamento.", pontua: ["Alquimistas", "Ones"] },
+      { texto: "Ato rápido e mudo o terreno ao redor.", pontua: ["Modificadores", "Alquimistas"] }
+    ]
+  },
+  {
+    texto: "18. O que te deixa mais confortável em momentos difíceis?",
+    alternativas: [
+      { texto: "Ter um plano escondido mesmo que ninguém veja.", pontua: ["Alquimistas", "Armeiros"] },
+      { texto: "Fingir que está tudo bem e mudar o foco.", pontua: ["Modificadores", "Ones"] },
+      { texto: "Sentir que alguém confia em mim.", pontua: ["Invocadores", "Egos"] },
+      { texto: "Criar um jeito novo de reagir.", pontua: ["Modificadores", "Armeiros"] },
+      { texto: "Aceitar que o que vier… eu aguento.", pontua: ["Egos", "Ones"] }
+    ]
+  },
+  {
+    texto: "19. Como você lida com algo que sai do controle?",
+    alternativas: [
+      { texto: "Transformo isso em outra coisa útil.", pontua: ["Modificadores", "Egos"] },
+      { texto: "Deixo o caos acontecer e vejo o que sobra.", pontua: ["Ones", "Modificadores"] },
+      { texto: "Crio regras novas que se ajustem ao que restou.", pontua: ["Armeiros", "Alquimistas"] },
+      { texto: "Peço ajuda ou reforço.", pontua: ["Invocadores", "Alquimistas"] },
+      { texto: "Observo tudo em silêncio até ver uma chance.", pontua: ["Alquimistas", "Egos"] }
+    ]
+  },
+  {
+    texto: "20. O que define seu jeito de existir nesse mundo?",
+    alternativas: [
+      { texto: "Força silenciosa, como uma rocha viva.", pontua: ["Egos", "Armeiros"] },
+      { texto: "Mudança constante, como um vento colorido.", pontua: ["Modificadores", "Ones"] },
+      { texto: "Presença firme, mesmo em silêncio.", pontua: ["Invocadores", "Alquimistas"] },
+      { texto: "Loucuras que fazem sentido só pra mim.", pontua: ["Ones", "Modificadores"] },
+      { texto: "Detalhes escondidos, como um mapa vivo.", pontua: ["Alquimistas", "Invocadores"] }
+    ]
+  }
+]
 
 
 
